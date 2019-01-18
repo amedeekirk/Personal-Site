@@ -1,0 +1,74 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin  section-title {
+  padding: 4rem 4rem 0 4rem;
+}
+
+@mixin  section-content {
+  padding: 0 4rem;
+
+  & p {
+    margin-top: 10rem;
+
+    @media (min-width: 1025px) {
+      margin-top: 2rem;
+    }
+
+  }
+}
+
+@mixin desktop-padding {
+  @media (min-width: 1025px) {
+    padding: 0 16.5%;
+  }
+}
+
+// Items for careers/projects pages
+@mixin nav {
+  text-align: center;
+  color: $color-gray;
+
+  &--prev,
+  &--next {
+
+    &:hover {
+      cursor: pointer;
+    }
+
+  }
+
+  &--black {
+    color: $color-black;
+  }
+}
+
+@mixin subheader {
+  color: $color-light-gray;
+  padding-bottom: 2rem;
+  font-size: 2rem;
+
+  @media (min-width: 1025px) {
+    padding-bottom: 1rem;
+  }
+
+}
+
+@mixin description {
+  font-size: 3rem;
+}
+
+@mixin title {
+  font-weight: 600;
+  padding-bottom: 2rem;
+
+  @media (min-width: 1025px) {
+    padding: 2rem 0 1rem;
+  }
+
+}

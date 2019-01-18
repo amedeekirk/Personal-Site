@@ -1,0 +1,24 @@
+.contact {
+  @include desktop-padding;
+  background-color: $color-off-white;
+  grid-area: gc;
+  display: grid;
+  grid-template-rows: 2fr 4fr 8fr 2fr 4fr;
+  grid-template-areas:
+          "gt"
+          "gi"
+          "gf"
+          "."
+          "gc";
+
+  @media (min-width: 1025px) {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+            "gt ."
+            "gi ."
+            "gf ."
+            ". ."
+            "gc .";
+  }
+
+}

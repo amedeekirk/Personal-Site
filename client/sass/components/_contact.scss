@@ -1,0 +1,70 @@
+.contact {
+  color: $color-black;
+
+  &__header {
+    grid-area: gt;
+    @include  section-title;
+  }
+
+  &__intro {
+    grid-area: gi;
+    @include section-content;
+  }
+
+  &__form {
+    grid-area: gf;
+    @include section-content;
+    text-align: center;
+    margin: auto;
+
+    @media (min-width: 1025px) {
+     margin: 2rem 0 0;
+    }
+
+    input {
+      margin-bottom: 5vh;
+      display: inline-block;
+      width: 100%;
+      border: 0;
+      background: none;
+      box-shadow: none;
+      border-radius: 0;
+      border-bottom: solid 5px black;
+
+      @media (min-width: 1025px) {
+        border-bottom: solid 2px black;
+        display: block;
+      }
+    }
+
+    .btn {
+      width: 100%;
+
+      @media (min-width: 1025px) {
+        width: initial;
+        float: left;
+      }
+    }
+
+  }
+
+  &__icons {
+    grid-area: gc;
+    @include section-content;
+    text-align: center;
+
+    a {
+      color: transparent;
+
+      img {
+        max-width: 6vh;
+      }
+    }
+
+    @media (min-width: 1025px) {
+      display: inline-block;
+      text-align: left;
+    }
+
+  }
+}

@@ -1,0 +1,10 @@
+.blog {
+
+  &__header {
+    @include  section-title;
+  }
+
+  &__content {
+    @include section-content;
+  }
+}

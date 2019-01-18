@@ -1,0 +1,31 @@
+.about {
+
+  &__header {
+    grid-area: gt;
+    @include  section-title;
+  }
+
+  &__content {
+    grid-area: gc;
+    @include section-content;
+  }
+
+  &__image {
+    display: none;
+
+    @media (min-width: 1025px) {
+      display: initial;
+
+      img {
+        max-width: 100%;
+      }
+
+    }
+  }
+
+  &__btn {
+    grid-area: gb;
+    padding: 0 4rem;
+  }
+
+}

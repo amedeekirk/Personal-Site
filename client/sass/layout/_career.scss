@@ -1,0 +1,21 @@
+.career {
+  @include desktop-padding;
+  background-color: $color-white;
+  grid-area: gw;
+  display: grid;
+  grid-template-rows: 2fr 11fr 2fr 5fr;
+  grid-template-areas:
+          "gt"
+          "ga"
+          "."
+          "gn";
+
+  @media (min-width: 1025px) {
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+            "gt gt"
+            "gp ga"
+            ". ."
+            "gn gn";
+  }
+}

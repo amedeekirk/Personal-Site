@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Crete+Round:300" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Amedee</title>
+</head>
+<body>
+<div class="wrapper">
+    <header class="header">
+        <!--Add resume dl link?-->
+        <div class="header__title">
+            <span class="header__title--blue">Hi!</span>
+            <span class="header_title--black">I'm Amedee.</span>
+        </div>
+            <div class="header--arrow"><a href="#about">⌄</a></div>
+    </header>
+
+    <div class="about" id="about">
+        <div class="about__header">>> About</div>
+        <div class="about__content">
+            <p>Hi! 👋 I'm Amedee.</p>
+            <p>I'm a recent graduate from Oregon State University with a B.S. in Computer Science.</p>
+            <p>I love making all things internet.</p>
+            <p>I have a huge passion for learning anything and everything I can, including new software development tools, philosophy and Japanese.</p>
+        </div>
+        <div class="about__image"><img src="assets/meSketch.png" alt="profile picture"></div>
+        <div class="about__btn">
+            <a class="btn" href="#contact">Get in touch</a>
+        </div>
+    </div>
+
+    <div class="career">
+        <div class="career__header">>> Career</div>
+        <div class="career__img"><img src="" alt="company logo" class="career__img__src"></div>
+        <div class="career__about">
+            <div class="career__about__title"></div>
+            <div class="career__about__date"></div>
+            <div class="career__about__desc"></div>
+        </div>
+        <div class="career__nav">
+            <span class="career__nav--prev">prev</span>  |  <span class="career__nav--next ">next</span>
+        </div>
+    </div>
+
+    <div class="projects">
+        <div class="projects__header">>> Projects</div>
+        <div class="projects__project">
+            <div class="projects__project__title"></div>
+            <div class="projects__project__stack"></div>
+            <div class="projects__project__desc"></div>
+        </div>
+        <div class="projects__nav">
+            <span class="projects__nav--prev">prev</span>  |  <span class="projects__nav--next ">next</span>
+        </div>
+    </div>
+
+    <div class="blog">
+        <div class="blog__header">>> Musings</div>
+        <div class="placeholder">Coming Soon!</div>
+    </div>
+
+    <div class="contact" id="contact">
+        <div class="contact__header">>> Contact</div>
+        <div class="contact__intro">
+            <p>Want to talk, or learn more about me? Please do not hesitate to get in touch!</p>
+        </div>
+        <form action="submit" class="contact__form" id="contact__form">
+            <input type="email" id="email" required placeholder="Your email">
+            <input type="text" id="message" required placeholder="Message" >
+            <button class="btn" id="submit">Submit</button>
+        </form>
+        <div class="contact__icons">
+            <a href="https://www.linkedin.com/in/j-amedee-kirkpatrick-038b4111b/">
+                <img src="assets/iconfinder_linked_in_online_social_media_734393.png" alt="linkedin">
+            </a>
+            <a href="https://github.com/amedeekirk">
+                <img src="assets/iconfinder_social_media_logo_github_1221585.png" alt="github">
+            </a>
+            <a href="https://www.instagram.com/amedee._/">
+                <img src="assets/iconfinder_instagram_online_social_media_photo_734395.png" alt="instagram">
+            </a>
+            <a href=https://soundcloud.com/vsvc"">
+                <img src="assets/iconfinder_social_media_logo_soundcloud_1221587.png" alt="soundcloud">
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/vendor/jquery-3.3.1.min.js"></script>
+<script src="js/careers.js"></script>
+<script src="js/projects.js"></script>
+<script src="js/index.js"></script>
+</html>

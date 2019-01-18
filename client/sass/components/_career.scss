@@ -1,0 +1,50 @@
+.career {
+
+  &__header {
+    grid-area: gt;
+    @include  section-title;
+  }
+
+  &__img {
+    display: none;
+
+    &__src {
+      max-width: 100%;
+    }
+
+    @media (min-width: 1025px) {
+      grid-area: gp;
+      display: initial;
+    }
+
+  }
+
+  &__about {
+    grid-area: ga;
+    @include section-content;
+    margin: auto 0;
+
+    @media (min-width: 1025px) {
+      margin: initial;
+    }
+
+    &__title {
+      @include title;
+    }
+
+    &__stack {
+      @include subheader;
+    }
+
+    &__desc {
+      @include description;
+    }
+
+  }
+
+  &__nav {
+    grid-area: gn;
+    @include nav;
+  }
+
+}

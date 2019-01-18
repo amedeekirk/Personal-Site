@@ -1,0 +1,41 @@
+.header {
+  text-align: center;
+  font-size: 12rem;
+
+  @media (min-width: 1025px) {
+    font-size: 8rem;
+  }
+
+  [class^='header__title--b'] {
+    display: block;
+
+    @media (min-width: 1025px) {
+      display: inline;
+    }
+
+  }
+
+  &__title {
+    grid-area: gt;
+    &--blue {
+      color: $color-blue;
+
+    }
+  }
+
+  &--arrow {
+    grid-area: ga;
+
+    a {
+      &:visited,
+      &:link {
+        color: black;
+        text-decoration: none;
+      }
+    }
+
+  }
+
+}
+
+

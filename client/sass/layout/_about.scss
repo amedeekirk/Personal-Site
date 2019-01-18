@@ -1,0 +1,20 @@
+.about {
+  @include desktop-padding;
+  background-color: $color-off-white;
+  grid-area: ga;
+  display: grid;
+  grid-template-rows: 2fr 14fr 4fr;
+  grid-template-areas:
+          "gt"
+          "gc"
+          "gb";
+
+  @media (min-width: 1025px) {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+          "gt gt"
+          "gc gp"
+          "gb gb";
+  }
+
+}
