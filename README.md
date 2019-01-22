@@ -1,4 +1,4 @@
-# amedeekirk.github.io
+# Personal Site
 Version 4 of my personal website, now with SASS!
 
 ## About

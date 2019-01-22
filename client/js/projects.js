@@ -2,7 +2,7 @@ const projects = [
     {
         "title": "TypeTester",
         "stack": "PHP, Vue, Node.js, SQL",
-        "desc": "An evolved words per minute test that originally started out as a final project for my Intro to Web Dev course using vanilla frontend and PHP with Apache. I later developed it into just a frontend application, utilizing Vue and Node.js. Most recently, It has undergone a dramatic rewrite as to meet requirements for a Databases course using Node, SQL and Handlebars.js.",
+        "desc": "An evolved words per minute test that originally started out as a final project for my Intro to Web Development course using vanilla frontend and PHP with Apache. I later developed it into a frontend application, utilizing Vue and Node.js. Most recently, It has undergone a dramatic rewrite as to meet requirements for a Databases course using Node, SQL and Handlebars.js.",
         "link": "https://github.com/amedeekirk/typeTester"
     },
 

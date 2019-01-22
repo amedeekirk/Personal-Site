@@ -47,12 +47,20 @@ $('.contact__form').submit((e) => {
 
 // Updates projects view
 function updateProjectInfo() {
-    $('.projects__project__title').html(`<a href="${projects[projNum].link}">${projects[projNum].title}</a>`);
-    $('.projects__project__stack').text(projects[projNum].stack);
-    $('.projects__project__desc').text(projects[projNum].desc);
-
     let next = $('.projects__nav--next');
     let prev = $('.projects__nav--prev');
+    let projectSelector = $('.projects__project');
+
+    let projectsTemplate = `
+            <div class="projects__project__title">
+                <a href='${projects[projNum].link}'>${projects[projNum].title}</a>
+            </div>
+            <div class="projects__project__stack">${projects[projNum].stack}</div>
+            <div class="projects__project__desc">${projects[projNum].desc}</div>`;
+
+    projectSelector.animate({'opacity': 0}, 400, function(){
+        $(this).html(projectsTemplate).animate({'opacity': 1}, 400);
+    });
 
     projects[projNum + 1] ? next.addClass("projects__nav--black") : next.removeClass("projects__nav--black");
     projects[projNum - 1] ? prev.addClass("projects__nav--black") : prev.removeClass("projects__nav--black");
@@ -60,17 +68,28 @@ function updateProjectInfo() {
 
 // Updates career view
 function updateCareerInfo() {
-    $('.career__about__title').text(careers[careerNum].company);
-    $('.career__about__about').text(careers[careerNum].date);
-    $('.career__about__desc').text(careers[careerNum].desc);
-
-    let careerImg = careers[careerNum].img;
-    let imageTag = $('.career__img__src');
-
-    careerImg ? imageTag.removeClass('hidden').attr('src', careerImg) : imageTag.addClass('hidden');
-
     let next = $('.career__nav--next');
     let prev = $('.career__nav--prev');
+    let careerAbtSelector = $('.career__about');
+    let careerImgSelector = $('.career__img');
+
+    let careerImg = careers[careerNum].img;
+    let imgDisplay = careerImg ? '' : 'hidden';
+
+    let careerAbtTemplate = `
+            <div class="career__about__title">${careers[careerNum].company}</div>
+            <div class="career__about__date">${careers[careerNum].date}</div>
+            <div class="career__about__desc">${careers[careerNum].desc}</div>`;
+
+    let careerImgTemplate = `<img src="${careerImg || ''}" alt="company logo" class="career__img__src ${imgDisplay}">`;
+
+    careerAbtSelector.animate({'opacity': 0}, 400, function(){
+        $(this).html(careerAbtTemplate).animate({'opacity': 1}, 400);
+    });
+
+    careerImgSelector.animate({'opacity': 0}, 400, function(){
+        $(this).html(careerImgTemplate).animate({'opacity': 1}, 400);
+    });
 
     careers[careerNum + 1] ? next.addClass("projects__nav--black") : next.removeClass("projects__nav--black");
     careers[careerNum - 1] ? prev.addClass("projects__nav--black") : prev.removeClass("projects__nav--black");
