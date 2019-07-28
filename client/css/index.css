@@ -12,24 +12,6 @@ html {
 body {
   box-sizing: border-box; }
 
-.btn, .btn:link, .btn:visited {
-  color: black;
-  text-decoration: none;
-  text-transform: uppercase;
-  border: 2px solid black;
-  border-radius: 2px;
-  transition-duration: .2s;
-  background-color: white;
-  padding: 2rem 4rem; }
-  @media (min-width: 1025px) {
-    .btn, .btn:link, .btn:visited {
-      padding: 1rem 2rem; } }
-
-.btn:hover {
-  color: white;
-  background-color: black;
-  transition-duration: .2s; }
-
 .hidden {
   display: none !important; }
 
@@ -66,9 +48,29 @@ input {
     input {
       font-size: 2rem; } }
 
+.btn, .btn:link, .btn:visited {
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 2px solid black;
+  border-radius: 2px;
+  transition-duration: .2s;
+  background-color: white;
+  padding: 2rem 4rem; }
+  @media (min-width: 1025px) {
+    .btn, .btn:link, .btn:visited {
+      padding: 1rem 2rem; } }
+
+.btn:hover {
+  color: white;
+  background-color: black;
+  transition-duration: .2s; }
+
 .about__header {
   grid-area: gt;
   padding: 4rem 4rem 0 4rem; }
+  .about__header::first-letter {
+    border-bottom: 0.25rem solid #00CCDD; }
 
 .about__content {
   grid-area: gc;
@@ -93,6 +95,8 @@ input {
 
 .blog__header {
   padding: 4rem 4rem 0 4rem; }
+  .blog__header::first-letter {
+    border-bottom: 0.25rem solid #00CCDD; }
 
 .blog__content {
   padding: 0 4rem; }
@@ -105,10 +109,13 @@ input {
 .career__header {
   grid-area: gt;
   padding: 4rem 4rem 0 4rem; }
+  .career__header::first-letter {
+    border-bottom: 0.25rem solid #00CCDD; }
 
 .career__img {
   display: none; }
   .career__img__src {
+    padding: 2rem 0 1rem;
     max-width: 100%; }
   @media (min-width: 1025px) {
     .career__img {
@@ -157,6 +164,8 @@ input {
   .contact__header {
     grid-area: gt;
     padding: 4rem 4rem 0 4rem; }
+    .contact__header::first-letter {
+      border-bottom: 0.25rem solid #00CCDD; }
   .contact__intro {
     grid-area: gi;
     padding: 0 4rem; }
@@ -239,6 +248,8 @@ input {
 .projects__header {
   grid-area: gt;
   padding: 4rem 4rem 0 4rem; }
+  .projects__header::first-letter {
+    border-bottom: 0.25rem solid #00CCDD; }
 
 .projects__nav {
   grid-area: gn;
@@ -284,6 +295,12 @@ input {
   .projects__project__desc {
     font-size: 3rem; }
 
+.wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(6, 100vh);
+  grid-template-areas: "gh" "ga" "gw" "gp" "gb" "gc"; }
+
 .about {
   background-color: #f0f0f0;
   grid-area: ga;
@@ -297,6 +314,15 @@ input {
     .about {
       grid-template-columns: 2fr 1fr;
       grid-template-areas: "gt gt" "gc gp" "gb gb"; } }
+
+.header {
+  grid-area: gh;
+  display: grid;
+  grid-template-rows: 16fr 40fr 8fr 2fr;
+  grid-template-areas: "." "gt" "ga" "."; }
+  @media (min-width: 1025px) {
+    .header {
+      padding: 0 16.5%; } }
 
 .blog {
   grid-area: gb; }
@@ -318,6 +344,16 @@ input {
       grid-template-columns: 1fr 2fr;
       grid-template-areas: "gt gt" "gp ga" ". ." "gn gn"; } }
 
+.projects {
+  grid-area: gp;
+  background-color: #f0f0f0;
+  display: grid;
+  grid-template-rows: 2fr 11fr 2fr 5fr;
+  grid-template-areas: "gt" "gp" "." "gn"; }
+  @media (min-width: 1025px) {
+    .projects {
+      padding: 0 16.5%; } }
+
 .contact {
   background-color: #f0f0f0;
   grid-area: gc;
@@ -331,28 +367,3 @@ input {
     .contact {
       grid-template-columns: 2fr 1fr;
       grid-template-areas: "gt ." "gi ." "gf ." ". ." "gc ."; } }
-
-.header {
-  grid-area: gh;
-  display: grid;
-  grid-template-rows: 16fr 40fr 8fr 2fr;
-  grid-template-areas: "." "gt" "ga" "."; }
-  @media (min-width: 1025px) {
-    .header {
-      padding: 0 16.5%; } }
-
-.projects {
-  grid-area: gp;
-  background-color: #f0f0f0;
-  display: grid;
-  grid-template-rows: 2fr 11fr 2fr 5fr;
-  grid-template-areas: "gt" "gp" "." "gn"; }
-  @media (min-width: 1025px) {
-    .projects {
-      padding: 0 16.5%; } }
-
-.wrapper {
-  width: 100%;
-  display: grid;
-  grid-template-rows: repeat(6, 100vh);
-  grid-template-areas: "gh" "ga" "gw" "gp" "gb" "gc"; }

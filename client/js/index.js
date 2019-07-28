@@ -91,7 +91,14 @@ function updateCareerInfo() {
         $(this).html(careerImgTemplate).animate({'opacity': 1}, 400);
     });
 
-    careers[careerNum + 1] ? next.addClass("projects__nav--black") : next.removeClass("projects__nav--black");
+    if (careers[careerNum + 1]) {
+        next.addClass("projects__nav--black");
+        (new Image()).src = careers[careerNum+1].img;
+    }
+    else {
+        next.removeClass("projects__nav--black");
+    }
+
     careers[careerNum - 1] ? prev.addClass("projects__nav--black") : prev.removeClass("projects__nav--black");
 }
 

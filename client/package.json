@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/amedeekirk/amedeekirk.github.io#readme",
   "devDependencies": {
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.12.0"
   },
   "dependencies": {}
 }

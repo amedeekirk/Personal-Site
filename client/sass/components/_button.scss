@@ -1,0 +1,27 @@
+.btn {
+
+  &,
+  &:link,
+  &:visited {
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 2px solid black;
+    border-radius: 2px;
+    transition-duration: .2s;
+    background-color: white;
+    padding: 2rem 4rem;
+
+    @media (min-width: 1025px) {
+      padding: 1rem 2rem;
+    }
+
+  }
+
+  &:hover {
+    color: white;
+    background-color: black;
+    transition-duration: .2s;
+  }
+
+}

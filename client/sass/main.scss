@@ -5,17 +5,12 @@
 @import "base/base";
 @import "base/typography";
 
-@import "components/about";
-@import "components/blog";
-@import "components/career";
-@import "components/contact";
-@import "components/header";
-@import "components/projects";
+@import "components/button";
 
-@import "layout/about";
-@import "layout/blog";
-@import "layout/career";
-@import "layout/contact";
-@import "layout/header";
-@import "layout/projects";
-@import "layout/wrapper";
+@import "partials/about";
+@import "partials/blog";
+@import "partials/career";
+@import "partials/contact";
+@import "partials/header";
+@import "partials/projects";
+@import "partials/grid";

@@ -1,5 +1,11 @@
 const careers = [
     {
+        "company": "Yakima Chief Hops",
+        "img": "assets/ych_logo.png",
+        "date": "May 2019 - Present",
+        "desc": "Currently working with a growing team of developers to expand our online offerings for both internal users and hop enthusiasts worldwide. Though I am firstly a frontend developer, I have also been able to contribute both in the backend and UI/UX aspects of our applications."
+    },
+    {
         "company": "Viewpoint",
         "img": "assets/viewpoint_logo.png",
         "date": "June 2018 - September 2018\n",
@@ -15,8 +21,9 @@ const careers = [
 
     {
         "company": "Web Marketing Inc.",
+        "img": "assets/wmi_logo.png",
         "date": "March 2016 - June 2016",
-        "desc": "A small Coos Bay-based company that manages data for a Fortune 10 company, amongst other services. Yes, I'm aware it sounds like a made-up company, but it is real :P. Here, I worked on mostly IT-related tasks, such as setting up workstations and installing operating systems. I also did some database queries and wrote weekly email blasts.",
+        "desc": "A small Coos Bay-based company that manages data for a Fortune 10 company, amongst other services.  Here, I worked on mostly IT-related tasks, such as setting up workstations and installing operating systems. I also did some database queries and wrote weekly email blasts.",
     },
 
     {
