@@ -51,7 +51,6 @@ $('.contact__form').submit((e) => {
 // Updates projects view
 const updateProject  = function updateProjectInfo() {
     let $projectSelector = $('.projects__project');
-    console.log(projects[projNum].title);
     let projectsTemplate = `
             <div class="projects__project__title">
                 <a href='${projects[projNum].link}'>${projects[projNum].title}</a>
