@@ -2,27 +2,24 @@
 let projNum = 0;
 let careerNum = 0;
 
-updateProjectInfo();
-updateCareerInfo();
+let $nextProject = $('.projects__nav--next');
+let $prevProject = $('.projects__nav--prev');
 
-$nextProject = $('.projects__nav--next');
-$prevProject = $('.projects__nav--prev');
-
-$nextCareer = $('.career__nav--next');
-$prevCareer = $('.career__nav--prev');
+let $nextCareer = $('.career__nav--next');
+let $prevCareer = $('.career__nav--prev');
 
 // Click events for projects
 $nextProject.click(() => {
     if(projects[projNum + 1]) {
         projNum++;
-        updateProjectInfo();
+        updateProject();
     }
 });
 
 $prevProject.click(() => {
     if(projects[projNum - 1]) {
         projNum--;
-        updateProjectInfo();
+        updateProject();
     }
 });
 
@@ -35,14 +32,14 @@ $('.projects__project__title').click(() => {
 $nextCareer.click(() => {
     if(careers[careerNum + 1]) {
         careerNum++;
-        updateCareerInfo();
+        updateCareer();
     }
 });
 
 $prevCareer.click(() => {
     if(careers[careerNum - 1]) {
         careerNum--;
-        updateCareerInfo();
+        updateCareer();
     }
 });
 
@@ -52,9 +49,9 @@ $('.contact__form').submit((e) => {
 });
 
 // Updates projects view
-function updateProjectInfo() {
+const updateProject  = function updateProjectInfo() {
     let $projectSelector = $('.projects__project');
-
+    console.log(projects[projNum].title);
     let projectsTemplate = `
             <div class="projects__project__title">
                 <a href='${projects[projNum].link}'>${projects[projNum].title}</a>
@@ -73,10 +70,10 @@ function updateProjectInfo() {
     projects[projNum - 1] ?
         $prevProject.addClass("projects__nav--black") :
         $prevProject.removeClass("projects__nav--black");
-}
+};
 
 // Updates career view
-function updateCareerInfo() {
+const updateCareer = function updateCareerInfo() {
     let $careerAbtSelector = $('.career__about');
     let $careerImgSelector = $('.career__img');
 
@@ -109,7 +106,7 @@ function updateCareerInfo() {
     careers[careerNum - 1] ?
         $prevCareer.addClass("projects__nav--black") :
         $prevCareer.removeClass("projects__nav--black");
-}
+};
 
 function sendEmail(email, msg) {
     $.ajax({
@@ -131,3 +128,6 @@ function sendEmail(email, msg) {
     });
 
 }
+
+updateCareer();
+updateProject();

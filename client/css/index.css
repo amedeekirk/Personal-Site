@@ -140,12 +140,12 @@ input {
     @media (min-width: 1025px) {
       .career__about__title {
         padding: 2rem 0 1rem; } }
-  .career__about__stack {
+  .career__about__date {
     color: #AAA;
     padding-bottom: 2rem;
     font-size: 2rem; }
     @media (min-width: 1025px) {
-      .career__about__stack {
+      .career__about__date {
         padding-bottom: 1rem; } }
   .career__about__desc {
     font-size: 3rem; }
