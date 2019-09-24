@@ -5,15 +5,21 @@ let careerNum = 0;
 updateProjectInfo();
 updateCareerInfo();
 
+$nextProject = $('.projects__nav--next');
+$prevProject = $('.projects__nav--prev');
+
+$nextCareer = $('.career__nav--next');
+$prevCareer = $('.career__nav--prev');
+
 // Click events for projects
-$('.projects__nav--next').click(() => {
+$nextProject.click(() => {
     if(projects[projNum + 1]) {
         projNum++;
         updateProjectInfo();
     }
 });
 
-$('.projects__nav--prev').click(() => {
+$prevProject.click(() => {
     if(projects[projNum - 1]) {
         projNum--;
         updateProjectInfo();
@@ -26,14 +32,14 @@ $('.projects__project__title').click(() => {
 });
 
 // Click events for careers
-$('.career__nav--next').click(() => {
+$nextCareer.click(() => {
     if(careers[careerNum + 1]) {
         careerNum++;
         updateCareerInfo();
     }
 });
 
-$('.career__nav--prev').click(() => {
+$prevCareer.click(() => {
     if(careers[careerNum - 1]) {
         careerNum--;
         updateCareerInfo();
@@ -47,9 +53,7 @@ $('.contact__form').submit((e) => {
 
 // Updates projects view
 function updateProjectInfo() {
-    let next = $('.projects__nav--next');
-    let prev = $('.projects__nav--prev');
-    let projectSelector = $('.projects__project');
+    let $projectSelector = $('.projects__project');
 
     let projectsTemplate = `
             <div class="projects__project__title">
@@ -58,20 +62,23 @@ function updateProjectInfo() {
             <div class="projects__project__stack">${projects[projNum].stack}</div>
             <div class="projects__project__desc">${projects[projNum].desc}</div>`;
 
-    projectSelector.animate({'opacity': 0}, 400, function(){
+    $projectSelector.animate({'opacity': 0}, 400, function(){
         $(this).html(projectsTemplate).animate({'opacity': 1}, 400);
     });
 
-    projects[projNum + 1] ? next.addClass("projects__nav--black") : next.removeClass("projects__nav--black");
-    projects[projNum - 1] ? prev.addClass("projects__nav--black") : prev.removeClass("projects__nav--black");
+    projects[projNum + 1] ?
+        $nextProject.addClass("projects__nav--black") :
+        $nextProject.removeClass("projects__nav--black");
+
+    projects[projNum - 1] ?
+        $prevProject.addClass("projects__nav--black") :
+        $prevProject.removeClass("projects__nav--black");
 }
 
 // Updates career view
 function updateCareerInfo() {
-    let next = $('.career__nav--next');
-    let prev = $('.career__nav--prev');
-    let careerAbtSelector = $('.career__about');
-    let careerImgSelector = $('.career__img');
+    let $careerAbtSelector = $('.career__about');
+    let $careerImgSelector = $('.career__img');
 
     let careerImg = careers[careerNum].img;
     let imgDisplay = careerImg ? '' : 'hidden';
@@ -83,23 +90,25 @@ function updateCareerInfo() {
 
     let careerImgTemplate = `<img src="${careerImg || ''}" alt="company logo" class="career__img__src ${imgDisplay}">`;
 
-    careerAbtSelector.animate({'opacity': 0}, 400, function(){
+    $careerAbtSelector.animate({'opacity': 0}, 400, function(){
         $(this).html(careerAbtTemplate).animate({'opacity': 1}, 400);
     });
 
-    careerImgSelector.animate({'opacity': 0}, 400, function(){
+    $careerImgSelector.animate({'opacity': 0}, 400, function(){
         $(this).html(careerImgTemplate).animate({'opacity': 1}, 400);
     });
 
     if (careers[careerNum + 1]) {
-        next.addClass("projects__nav--black");
+        $nextCareer.addClass("projects__nav--black");
         (new Image()).src = careers[careerNum+1].img;
     }
     else {
-        next.removeClass("projects__nav--black");
+        $nextCareer.removeClass("projects__nav--black");
     }
 
-    careers[careerNum - 1] ? prev.addClass("projects__nav--black") : prev.removeClass("projects__nav--black");
+    careers[careerNum - 1] ?
+        $prevCareer.addClass("projects__nav--black") :
+        $prevCareer.removeClass("projects__nav--black");
 }
 
 function sendEmail(email, msg) {
