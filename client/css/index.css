@@ -93,19 +93,6 @@ input {
   grid-area: gb;
   padding: 0 4rem; }
 
-.blog__header {
-  padding: 4rem 4rem 0 4rem; }
-  .blog__header::first-letter {
-    border-bottom: 0.25rem solid #00CCDD; }
-
-.blog__content {
-  padding: 0 4rem; }
-  .blog__content p {
-    margin-top: 10rem; }
-    @media (min-width: 1025px) {
-      .blog__content p {
-        margin-top: 2rem; } }
-
 .career__header {
   grid-area: gt;
   padding: 4rem 4rem 0 4rem; }
@@ -298,8 +285,8 @@ input {
 .wrapper {
   width: 100%;
   display: grid;
-  grid-template-rows: repeat(6, 100vh);
-  grid-template-areas: "gh" "ga" "gw" "gp" "gb" "gc"; }
+  grid-template-rows: repeat(5, 100vh);
+  grid-template-areas: "gh" "ga" "gw" "gp" "gc"; }
 
 .about {
   background-color: #f0f0f0;
@@ -322,12 +309,6 @@ input {
   grid-template-areas: "." "gt" "ga" "."; }
   @media (min-width: 1025px) {
     .header {
-      padding: 0 16.5%; } }
-
-.blog {
-  grid-area: gb; }
-  @media (min-width: 1025px) {
-    .blog {
       padding: 0 16.5%; } }
 
 .career {
@@ -355,7 +336,7 @@ input {
       padding: 0 16.5%; } }
 
 .contact {
-  background-color: #f0f0f0;
+  background-color: #FFF;
   grid-area: gc;
   display: grid;
   grid-template-rows: 2fr 4fr 8fr 2fr 4fr;
