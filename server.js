@@ -1,47 +1,65 @@
 const express = require('express');
+const env = require('dotenv').config()
 const bodyParser = require('body-parser');
-const nodemailer = require("nodemailer");
-const config = require('./config.json');
-
+const AWS = require('aws-sdk');
 
 const app = express();
-
 const port = process.env.PORT || 8000;
 
 app.use(express.static(__dirname + '/client'));
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
 
-async function sendEmail (_email, _message) {
+AWS.config.update({region: 'us-west-2'});
 
-    let transporter = nodemailer.createTransport({
-        service: 'Yahoo',
-        auth: {
-            user: config._email,
-            pass: config._password
-        }
-    });
 
-    let mailOptions = {
-        from: config._email, // sender address
-        to: "amedeekirk+site@gmail.com", // list of receivers
-        subject: `Message from ${_email}`, // Subject line
-        text: `${_message}` // plain text body
-    };
+async function sendEmail(_email, _message) {
+    const params = {
+        Destination: { /* required */
+            ToAddresses: [
+                'amedeekirk@yahoo.com',
+            ]
+        },
+        Message: { /* required */
+            Body: { /* required */
+                Text: {
+                    Charset: "UTF-8",
+                    Data: _message
+                }
+            },
+            Subject: {
+                Charset: 'UTF-8',
+                Data: `New website message from ${_email}`
+            }
+        },
+        Source: 'amedeekirk@gmail.com', /* required */
+        ReplyToAddresses: [
+            _email
+            /* more items */
+        ],
+    }
 
-    let info = await transporter.sendMail(mailOptions);
-    console.log("Message sent: %s", info.messageId);
+    const sendPromise = new AWS.SES({apiVersion: '2010-12-01'}).sendEmail(params).promise();
+
+    sendPromise.then(
+        function(data) {
+            console.log(data.MessageId);
+            return data
+        }).catch(
+        function(err) {
+            console.error(err, err.stack);
+        });
 }
 
 // define your own email api which points to your server.
-app.post( '/email', function(req, res){
+app.post('/email', function (req, res) {
 
     console.log("  --Receiving email request");
     let _email = req.body.email;
     let _message = req.body.msg;
     let status = 200;
 
-    sendEmail (_email, _message)
-        .catch((error) =>{
+    sendEmail(_email, _message)
+        .catch((error) => {
             console.error(error);
             status = 400
         })
@@ -50,4 +68,4 @@ app.post( '/email', function(req, res){
 });
 
 
-app.listen(port, () => console.log(`App listening on port ${port}!`));
+app.listen(port, () => console.log(`App listening on port ${port}! localhost:8000`));

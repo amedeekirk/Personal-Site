@@ -21,8 +21,10 @@
      margin: 2rem 0 0;
     }
 
-    input {
+    input,
+    textarea{
       margin-bottom: 5vh;
+      padding: .5rem 1rem;
       display: inline-block;
       width: 100%;
       border: 0;
@@ -30,7 +32,11 @@
       box-shadow: none;
       border-radius: 0;
       border-bottom: solid 5px black;
+      background: $color-lighter-gray;
 
+      &:focus {
+        outline: none;
+      }
       @media (min-width: 1025px) {
         border-bottom: solid 2px black;
         display: block;

@@ -24,7 +24,7 @@
   }
 }
 
-// Items for careers/projects pages
+// Items for careers pages. formerly projects page
 @mixin nav {
   text-align: center;
   color: $color-gray;
@@ -52,10 +52,6 @@
     padding-bottom: 1rem;
   }
 
-}
-
-@mixin description {
-  font-size: 3rem;
 }
 
 @mixin title {

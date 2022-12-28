@@ -15,7 +15,7 @@
 
     @media (min-width: 1025px) {
       grid-area: gp;
-      display: initial;
+      display: inherit;
     }
 
   }
@@ -35,10 +35,6 @@
 
     &__date {
       @include subheader;
-    }
-
-    &__desc {
-      @include description;
     }
 
   }

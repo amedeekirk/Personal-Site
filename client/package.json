@@ -4,7 +4,7 @@
   "description": "Personal website",
   "main": "index.js",
   "scripts": {
-    "compile-sass": "node-sass sass/main.scss css/index.css -w"
+    "compile-sass": "sass sass/main.scss css/index.css -w"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/amedeekirk/amedeekirk.github.io#readme",
   "devDependencies": {
-    "node-sass": "^4.12.0"
-  },
-  "dependencies": {}
+    "sass": "^1.57.1"
+  }
 }
