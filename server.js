@@ -14,13 +14,13 @@ AWS.config.update({region: 'us-west-2'});
 
 async function sendEmail(_email, _message) {
     const params = {
-        Destination: { /* required */
+        Destination: {
             ToAddresses: [
                 'amedeekirk@yahoo.com',
             ]
         },
-        Message: { /* required */
-            Body: { /* required */
+        Message: {
+            Body: {
                 Text: {
                     Charset: "UTF-8",
                     Data: _message
@@ -31,10 +31,9 @@ async function sendEmail(_email, _message) {
                 Data: `New website message from ${_email}`
             }
         },
-        Source: 'amedeekirk@gmail.com', /* required */
+        Source: 'amedeekirk@gmail.com',
         ReplyToAddresses: [
             _email
-            /* more items */
         ],
     }
 
@@ -68,4 +67,4 @@ app.post('/email', function (req, res) {
 });
 
 
-app.listen(port, () => console.log(`App listening on port ${port}! localhost:8000`));
+app.listen(port, () => console.log(`App listening on port ${port}!`));
